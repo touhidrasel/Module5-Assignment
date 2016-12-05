@@ -1,0 +1,20 @@
+<div class="container"
+  <h3 id="menu-categories-title" class="text-center">Your Information</h3>
+  <div class="text-center" ng-show="!myinfoCtrl.feedback.firstname">
+    <h4>Not Signed Up Yet. </h4>
+    <a ui-sref="public.signup" href="#signup"> Sign up Now!</a>
+  </div>
+  <div ng-show="myinfoCtrl.feedback.firstname">
+    <h5> First Name: {{myinfoCtrl.feedback.firstname}}</h5>
+    <h5> Last Name: {{myinfoCtrl.feedback.lastname}}</h5>
+    <h5>Email: {{myinfoCtrl.feedback.email}}</h5>
+    <h5>Email: {{myinfoCtrl.feedback.tel.number}}</h5>
+    <div class="menu-item-photo">
+      <div class="ng-binding"> {{myinfoCtrl.feedback.favorite}}</div>
+      <img class="img-responsive" width="250" height="150" ng-src="https://touhid-vourse5.herokuapp.com/images/{{myinfoCtrl.feedback.favorite}}.jpg">
+        <h5> {{myinfoCtrl.feedback.menuItem.name}}</h5>
+        <h5> {{myinfoCtrl.feedback.menuItem.description}}</h5>
+    </div>
+
+  </div>
+</div>

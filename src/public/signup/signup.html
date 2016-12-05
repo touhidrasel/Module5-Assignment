@@ -1,0 +1,45 @@
+<div class="container">
+  <h2 id="menu-categories-title" class="text-center"> Sign Up For Newsletter</h2>
+  <div class="text-center">
+    Please fill out the following form:
+  </div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-9">
+    <form class="form-horizontal ng-pristine ng-invalid ng-invalid-required ng-valod-pattern ng-valid-email" role="form" name="signupForm" ng-submit="signupCtrl.sendFeedback()" novalidate>
+      <div class="form-group">
+        <label for="firstname" class="col-sm-2 control-label"> First Name</label>
+        <input type="text" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="firstname" name="firstname" placeholder="Enter your first name" ng-model="feedback.firstname" required>
+      </div>
+      <div class="form-group">
+        <label for="lastname" class="col-sm-2 control-label"> Last Name </label>
+        <input type="text" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="lastname" name="lastname" placeholder="Enter your last name" ng-model="feedback.lastname" required>
+      </div>
+      <div class="form-group">
+        <label for="telnum" class="col-sm-2 control-label"> Contact Tel. </label>
+        <input type="tel" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="telnum" name="telnum" placeholder="Tel. number" ng-model="feedback.tel.number" required pattern="(\d{3})-(\d{3})-(\d{4})">
+        <span ng-show="(signupForm.telnum.$error.required|| signupForm.telnum.$invalid) && signupForm.telnum.$touched" class="ng-hide">Phone Number is required (e.g 111-111-1111)</span>
+      </div>
+      <div class="form-group">
+        <label for="emailid" class="col-sm-2 control-label">Email </label>
+        <input type="email" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="emailid" name="emailid" placeholder="Email" ng-model="feedback.email" required>
+        <span ng-show="(signupForm.emailid.$error.required|| signupForm.emailid.$invalid) && signupForm.emailid.$touched" class="ng-hide">Enter a valid email address</span>
+      </div>
+      <div class="form-group">
+        <label for="favorite" class="col-sm-2 control-label">Favorite Dish </label>
+        <input type="text" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="favorite" name="favorite" placeholder="Enter short name" ng-model="feedback.favorite" required>
+        <span ng-show="signupForm.favorite.$error.required && signupForm.favorite.$touched" class="ng-hide">Your Favorite Dish is required</span>
+        <span ng-show="error" class="ng-hide"> Not such short name exists </span>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success" ng-disabled="signupForm.$invalid" disabled="disabled"> Send feedback</button>
+      </div>
+      <div class="alert alert-success alert-dismissible" role="alert" ng-if="signupCtrl.successful">
+        "Your information has been saved"
+      </div>
+    </form>
+  </div>
+<div>
+
+
+</div>
